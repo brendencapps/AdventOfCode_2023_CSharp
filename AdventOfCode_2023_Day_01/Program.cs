@@ -7,8 +7,8 @@ int Part1Solution(string path)
 {
     return FileLinesReader(path).ConvertAll(line =>
     {
-        var firstDigit = line.First(ch => ch >= '0' && ch <= '9') - '0';
-        var lastDigit = line.Last(ch => ch >= '0' && ch <= '9') - '0';
+        var firstDigit = line.First(ch => ch is >= '0' and <= '9') - '0';
+        var lastDigit = line.Last(ch => ch is >= '0' and <= '9') - '0';
         return firstDigit * 10 + lastDigit;
     }).Sum();
 
